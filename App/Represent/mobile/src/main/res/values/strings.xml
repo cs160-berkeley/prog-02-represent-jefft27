@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Represent!</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="etxt_hint">94704</string>
+    <string name="type_zip_code"></string>
+    <string name="type_currLocation"></string>
+    <string name="button_text">Go!</string>
+    <string name="title_activity_display_reps">94704</string>
+    <string name="title_activity_detailed_info">DetailedInfo</string>
+    <string name="title_activity_even_more_info">EvenMoreInfo</string>
+</resources>
