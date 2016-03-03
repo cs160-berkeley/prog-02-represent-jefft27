@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/person"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/name"
+            android:fontFamily="sans-serif-light"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:background="#FFFFFF"
+            android:gravity="center|top"
+            android:layout_marginTop="10dp"
+            android:layout_alignBaseline="@+id/textView"
+            android:layout_alignBottom="@+id/textView"
+            android:layout_alignParentStart="true" />
+        <TextView
+            android:id="@+id/party"
+            android:fontFamily="sans-serif-light"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:background="#FFFFFF"
+            android:gravity="center|top"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true" />
+
+    </LinearLayout>
+
+</RelativeLayout>
