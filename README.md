@@ -4,11 +4,11 @@ Briefly describe your app here.
 
 ## Authors
 
-FirstName LastName ([your_email@berkeley.edu](mailto:your_email@berkeley.edu))
+Jeffrey Tan ([jefftan27@berkeley.edu](mailto:your_email@berkeley.edu))
 
 ## Demo Video
 
-See [your demo video title here] (https://link_to_your_video)
+See [PROG2-B] (https://www.youtube.com/watch?v=IBlW_sZNImo&feature=youtu.be)
 
 ## Screenshots
 
@@ -18,3 +18,7 @@ See [your demo video title here] (https://link_to_your_video)
 
 * Hat tip to anyone who's code was used
 * Any other support
+
+Stackoverflow:
+https://gist.github.com/gabrielemariotti/ca2d0a9f79b902b19a65
+https://github.com/drejkim/AndroidWearMotionSensors
