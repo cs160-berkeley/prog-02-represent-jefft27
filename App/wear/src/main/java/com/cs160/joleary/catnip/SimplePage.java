@@ -6,12 +6,10 @@ package com.cs160.joleary.catnip;
 public class SimplePage {
     public String mTitle;
     public String mText;
-    public int mimageID;
 
-    public SimplePage(String title, String text, int backgroundId) {
+    public SimplePage(String title, String text) {
         this.mTitle = title;
         this.mText = text;
-        this.mimageID = backgroundId;
     }
 
 

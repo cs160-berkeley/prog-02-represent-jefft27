@@ -26,11 +26,13 @@ public class PhoneListenerService extends WearableListenerService {
             // Value contains the String we sent over in WatchToPhoneService, "good job"
             String value = new String(messageEvent.getData(), StandardCharsets.UTF_8);
             Context context = getApplicationContext();
+            Log.v("value is: ", value);
             Intent intent = new Intent(context, DetailedInfoActivity.class );
             intent.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK );
-            intent.putExtra("name", value);
+            intent.putExtra("name", value); // for now to test if the watch to phone works.
             intent.putExtra("getInfo", "true");
             startActivity(intent);
+
         } else {
             super.onMessageReceived( messageEvent );
         }

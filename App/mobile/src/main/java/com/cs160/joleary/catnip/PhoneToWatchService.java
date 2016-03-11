@@ -22,6 +22,8 @@ public class PhoneToWatchService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
+        Log.v("PhoneToWatch", "in onCreate");
+
         //initialize the googleAPIClient for message passing
         mApiClient = new GoogleApiClient.Builder( this )
                 .addApi( Wearable.API )
@@ -48,8 +50,9 @@ public class PhoneToWatchService extends Service {
         // Which cat do we want to feed? Grab this info from INTENT
         // which was passed over when we called startService
         Bundle extras = intent.getExtras();
-        final String catName = extras.getString("CAT_NAME");
-
+        final String data_str = extras.getString("Data");
+        Log.v("PhoneToWatch ", data_str);
+        Log.v("PhoneToWatch", "in start command");
         // Send the message with the cat name
         new Thread(new Runnable() {
             @Override
@@ -57,7 +60,7 @@ public class PhoneToWatchService extends Service {
                 //first, connect to the apiclient
                 mApiClient.connect();
                 //now that you're connected, send a massage with the cat name
-                sendMessage("/" + catName, catName);
+                sendMessage("/WEAR", data_str);
             }
         }).start();
 
@@ -72,6 +75,7 @@ public class PhoneToWatchService extends Service {
     private void sendMessage( final String path, final String text ) {
         //one way to send message: start a new thread and call .await()
         //see watchtophoneservice for another way to send a message
+        Log.v("PhoneToWatch", "in send message");
         new Thread( new Runnable() {
             @Override
             public void run() {
@@ -79,6 +83,7 @@ public class PhoneToWatchService extends Service {
                 for(Node node : nodes.getNodes()) {
                     //we find 'nodes', which are nearby bluetooth devices (aka emulators)
                     //send a message for each of these nodes (just one, for an emulator)
+                    Log.v("PhoneToWatch","node is: " + node);
                     MessageApi.SendMessageResult result = Wearable.MessageApi.sendMessage(
                             mApiClient, node.getId(), path, text.getBytes() ).await();
                     //4 arguments: api client, the node ID, the path (for the listener to parse),

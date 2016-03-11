@@ -6,9 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.cs160.joleary.catnip.DetailedInfoActivity"
-    tools:showIn="@layout/activity_detailed_info"
+    tools:showIn="@layout/activity_display_reps"
     android:orientation="vertical"
-    android:background="#FFFFFF">
+    android:background="#FFFFFF"
+    android:id="@+id/view">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Closer Look"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:id="@+id/actionbar"
+        android:textColor="#FFFFFF"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,8 +29,9 @@
 
         <ImageView
             android:id="@+id/person"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="145dp"
+            android:layout_height="145dp"
+            android:scaleType="centerCrop"
             android:layout_marginTop="20dp"
             android:layout_gravity="center_horizontal"/>
     </LinearLayout>
@@ -40,143 +52,79 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="275dp"
+        android:layout_width="320dp"
         android:layout_height="0dp"
         android:layout_weight="3"
         android:orientation="vertical"
         android:layout_gravity="center">
 
         <TextView
-            android:id="@+id/position"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Position:"
-            android:textSize="17dp"
-            android:layout_marginBottom="5dp"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#c0c0c0"/>
-
-        <TextView
-            android:id="@+id/party"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Party:"
-            android:textSize="17dp"
-            android:layout_marginBottom="5dp"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#c0c0c0"/>
-
-        <TextView
-            android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Email:"
-            android:textSize="17dp"
-            android:layout_marginBottom="5dp"
-            android:onClick="openEmail"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#c0c0c0"/>
-
-        <TextView
-            android:id="@+id/website"
+            android:background="#FFFFFF"
+            android:id="@+id/end_of_term"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Website:"
-            android:textSize="17dp"
-            android:layout_marginBottom="5dp"
-            android:onClick="openWebBrowser"/>
+            android:autoLink="web"
+            android:textSize="16dp"
+            android:padding="5dp"
+            android:textColor="#000000"
+            android:paddingBottom="5dp" />
 
-        <View
+        <TextView
+            android:id="@+id/separator0"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#c0c0c0"/>
+            android:layout_height="5dp"/>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/tbird"/>
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="40dp">
-                <TextView
-                    android:id="@+id/tweet"
-                    android:layout_width="match_parent"
-                    android:layout_height="25dp"
-                    android:textSize="17dp"/>
-
-
-            </ScrollView>
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/moreInfoBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/down_arrow"
-            android:layout_gravity="center_horizontal"
-            android:onClick="exposeMoreInfo" />
-
-        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:background="#FFFFFF"
+            android:id="@+id/info"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            >
+            android:orientation="vertical"
+            android:weightSum="2">
 
-            <LinearLayout
-                android:id="@+id/info"
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Committees"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:paddingLeft="5dp"/>
+
+            <ListView
+                android:id="@+id/detailed_view"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:weightSum="2">
+                android:layout_height="70dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="5dp"
+                android:divider="#CCCCCC"
+                android:dividerHeight="1dp"
+                android:padding="5dp" ></ListView>
 
-                <TextView
-                    android:id="@+id/end_of_term"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="End of term:"
-                    android:textSize="17dp"
-                    android:layout_marginBottom="5dp"/>
+            <TextView
+                android:id="@+id/separator"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"/>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#c0c0c0"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bills"
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"/>
 
-                <TextView
-                    android:id="@+id/committees"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Committees"
-                    android:textSize="17dp"
-                    android:layout_marginBottom="5dp"/>
+            <ListView
+                android:id="@+id/detailed_bill_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="5dp"
+                android:divider="#CCCCCC"
+                android:dividerHeight="1dp"
+                android:padding="5dp"></ListView>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#c0c0c0"/>
-
-                <TextView
-                    android:id="@+id/bills_passed"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Recent Bills"
-                    android:textSize="17dp"
-                    android:layout_marginBottom="5dp"/>
-
-            </LinearLayout>
-        </ScrollView>
+        </LinearLayout>
     </LinearLayout>
-
 </LinearLayout>

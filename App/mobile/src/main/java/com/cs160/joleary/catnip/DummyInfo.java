@@ -28,13 +28,14 @@ public class DummyInfo {
 
 
     private HashMap<String, String> m1, m2, m3, m4, m5, m6;
-    private HashMap<String, HashMap<String, String>> reps1, reps2;
+    private HashMap<String, HashMap<String, String>> reps1, reps2, reps3;
     private HashMap<String, HashMap<String, HashMap<String, String>>> master_map;
 
     public DummyInfo(String zipCode) {
         this.zipCode = zipCode;
         reps1 = new HashMap<String, HashMap<String, String>>();
         reps2 = new HashMap<String, HashMap<String, String>>();
+        reps3 = new HashMap<String, HashMap<String, String>>();
         master_map = new HashMap<String, HashMap<String, HashMap<String, String>>>();
         populateMap();
     }
@@ -109,15 +110,20 @@ public class DummyInfo {
         reps1.put("Dianne Feinstein", m1);
         reps1.put("Kevin McCarthy", m2);
         reps1.put("Barbara Boxer", m3);
+        reps1.put("Blah", m4);
         reps2.put("Chuck Schumer", m4);
         reps2.put("Kristen Gillibrand", m5);
         reps2.put("Lee Zeldin", m6);
+        reps3.put("Dianne Feinstein", m1);
+        reps3.put("Barbara Boxer", m3);
+        reps3.put("Kevin McCarthy", m2);
     }
 
 
     public HashMap<String, HashMap<String, HashMap<String, String>>> getMap() {
         master_map.put(this.zipCode, reps1);
         master_map.put("10001", reps2);
+        master_map.put("94811", reps3);
         return master_map;
     }
 

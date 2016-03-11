@@ -7,6 +7,16 @@
     tools:context="com.example.android.prog2.MainActivity"
     android:background="#FFFFFF">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Represent!"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:id="@+id/actionbar"
+        android:textColor="#FFFFFF"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

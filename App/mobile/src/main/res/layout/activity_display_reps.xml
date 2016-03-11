@@ -8,9 +8,21 @@
     tools:context="com.cs160.joleary.catnip.DisplayRepsActivity"
     tools:showIn="@layout/activity_display_reps"
     android:orientation="vertical"
-    android:background="#FFFFFF">
+    android:background="#FFFFFF"
+    android:id="@+id/background">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Representatives"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:id="@+id/actionbar"
+        android:textColor="#FFFFFF"/>
 
     <ListView
+        android:layout_weight="1"
         android:id="@+id/rep_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
